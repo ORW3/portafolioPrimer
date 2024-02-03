@@ -1,0 +1,51 @@
+<div class="container mt-3">
+    <h2>Página Inicial</h2>
+
+    <p class="mt-5">Nombre del alumno: {{ nombre }}</p>
+
+    <p>Nombre en mayusculas: {{ nombre | uppercase }}</p>
+
+    <p>Calificacion: {{ calificacion }}</p>
+
+    <p>Calificacion: {{ calificacion * 10 }}</p>
+
+    <p></p>
+    <!-- Input para cambiar el valor de la propiedad nombre-->
+
+    <input type="text" class="nes-input" placeholder="Escribe tu nombre" [(ngModel)]="nombre" name="" id="">
+
+    <br><br>
+
+    <!-- Boton para mandar a llamar el metodo cambiarValores -->
+    <button type="button" class="nes-btn is-primary"
+        (click)="cambiarValores()">
+        Cambiar valores
+    </button>
+
+    <br><br>
+
+    <!-- Ejemplos de condicionales ngIf-->
+
+    <p *ngIf="encendido">La propiedad encendido está en true</p>
+    <p *ngIf="!encendido">La propiedad encendido está en false</p>
+    <br>
+    <p *ngIf=" 10 > 5 ">Es verdadero</p>
+
+    <br><br>
+
+    <!-- Ejemplos de ciclos ngFor-->
+
+    <div class="nes-table-responsive mb-4">
+        <table class="nes-table is-bordered is-centered">
+            <thead>
+                <th>Persona</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let persona of personas">
+                    <td>{{ persona }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
